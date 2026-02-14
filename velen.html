@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Special 💖</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    background: linear-gradient(135deg,#ff4e9b,#ff9a9e);
+    font-family: Arial, sans-serif;
+    text-align:center;
+    overflow:hidden;
+    color:white;
+}
+
+.container{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+}
+
+h1{
+    font-size:40px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px white;}
+    to{ text-shadow:0 0 25px red;}
+}
+
+button{
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+    background:white;
+    color:#ff4e9b;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#ff4e9b;
+    color:white;
+}
+
+.hidden{
+    display:none;
+}
+
+img{
+    width:250px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 0 20px white;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* mini game */
+#gameBox{
+    margin-top:20px;
+    font-size:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Selamat Hari Valentine 💖</h1>
+    <h2>Naura Alifah Cahya Ninggrum ❤️</h2>
+
+    <p>
+    Jika kamu benar-benar orang spesial...  
+    Selesaikan mini game ini dulu 😘
+    </p>
+
+    <div id="gameBox">
+        <p>Pertanyaan: Siapa yang paling cantik hari ini?</p>
+        <button onclick="checkAnswer('naura')">Naura 💕</button>
+        <button onclick="checkAnswer('lain')">Orang Lain</button>
+    </div>
+
+    <div id="result" class="hidden">
+        <h3>Jawaban kamu benar! 😍</h3>
+        <button onclick="showPhoto()">Klik untuk melihat orangnya 💖</button>
+    </div>
+
+    <div id="photoSection" class="hidden">
+        <h2>Ini Dia Orang Paling Cantik 💕</h2>
+        <img src="foto.jpg" alt="Naura">
+        <p>
+        Cantiknya bukan cuma di wajah,  
+        tapi juga di hati yang tulus dan penuh cinta.  
+        Aku beruntung bisa mengenalmu 💖
+        </p>
+    </div>
+
+    <button onclick="playMusic()">Putar Musik 🎶</button>
+
+</div>
+
+<audio id="music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic(){
+    document.getElementById("music").play();
+}
+
+function checkAnswer(answer){
+    if(answer === "naura"){
+        document.getElementById("result").classList.remove("hidden");
+        alert("Jawaban paling benar sedunia 😍");
+    } else {
+        alert("Salah 😜 Coba lagi!");
+    }
+}
+
+function showPhoto(){
+    document.getElementById("photoSection").classList.remove("hidden");
+}
+</script>
+
+</body>
+  </html>
